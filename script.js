@@ -149,29 +149,39 @@ class WaitlistForm {
     }
 
     async submitToWaitlist(data) {
-        try {
-            const response = await fetch('/tables/waitlist', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
+        const portalId = "PORTAL_ID";
+        const formId = "FORM_ID";
 
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({ message: 'Network response was not ok' }));
-                throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+        const hubspotData = {
+            fields: [
+                { name: "firstname", value: data.firstName },
+                { name: "lastname", value: data.lastName },
+                { name: "email", value: data.email },
+                { name: "company", value: data.company },
+                { name: "interest", value: data.interest }
+            ],
+            context: {
+                pageUri: window.location.href,
+                pageName: "360EVO Coming Soon"
             }
+        };
 
-            const result = await response.json();
-            return { success: true, data: result };
-            
-        } catch (error) {
-            // Fallback: Store in localStorage if API fails
-            console.warn('API submission failed, falling back to localStorage:', error);
-            return this.fallbackToLocalStorage(data);
+        const response = await fetch(
+            `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(hubspotData)
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("HubSpot submission failed");
         }
+
+        return { success: true };
     }
+
 
     fallbackToLocalStorage(data) {
         try {
