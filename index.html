@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360EVO - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="coming-soon-badge">
+                <span>🚀 Launching Soon</span>
+            </div>
+            
+            <h1 class="hero-headline">
+                Build Innovation.<br>
+                Together.<br>
+                At Scale.
+            </h1>
+            
+            <p class="hero-subheadline">
+                360EVO is an open innovation platform that connects organizations, startups, experts, and technologies to design, deploy, and scale real-world AI and digital solutions—together.
+            </p>
+            
+            <div class="cta-section">
+                <button class="primary-cta" onclick="scrollToForm()">
+                    Join the Ecosystem
+                    <span class="cta-arrow">→</span>
+                </button>
+                <!-- <button class="secondary-cta">
+                    Become a Partner
+                </button> -->
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="floating-elements">
+                <div class="floating-element element-1">🚀</div>
+                <div class="floating-element element-2">💡</div>
+                <div class="floating-element element-3">⚡</div>
+                <div class="floating-element element-4">🌟</div>
+                <div class="floating-element element-5">🔥</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="waitlist-section" id="waitlist">
+        <div class="waitlist-container">
+            <div class="waitlist-header">
+                <h2>Get Early Access</h2>
+                <p>Be the first to join the 360EVO innovation network. Get exclusive updates and early access to our platform.</p>
+            </div>
+            
+            <form class="waitlist-form" id="waitlistForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company/Organization</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="interest">I'm interested in:</label>
+                    <select id="interest" name="interest">
+                        <option value="">Select your interest</option>
+                        <option value="startup">Joining as a Startup</option>
+                        <option value="organization">Joining as an Organization</option>
+                        <option value="expert">Joining as an Expert</option>
+                        <option value="technology">Technology Partnership</option>
+                        <option value="general">General Interest</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <span class="checkmark"></span>
+                        Send me updates about 360EVO and innovation opportunities
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Join Waitlist</span>
+                    <span class="btn-loading" style="display: none;">
+                        <span class="spinner"></span>
+                        Joining...
+                    </span>
+                </button>
+            </form>
+            
+            <div class="success-message" id="successMessage" style="display: none;">
+                <div class="success-icon">✅</div>
+                <h3>Welcome to the 360EVO community!</h3>
+                <p>You're now on our exclusive waitlist. We'll keep you updated with the latest developments and early access opportunities.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>360EVO</h3>
+                <p>Innovation at Scale</p>
+            </div>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 360EVO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
